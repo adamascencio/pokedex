@@ -5,25 +5,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="badge-styles.css">
   <title>Pokedex</title>
 </head>
 <body>
   <h1>Pokémon Search App</h1>
   <div class="pokedex-container">
     <section>
-      <p>Search for Pokémon or ID:</p>
       <div class="search-container">
-        <input id="search-input" type="text">
-        <button id="search-button">Search</button>
+        <p>Search for Pokémon or ID:</p>
+        <div>
+          <input id="search-input" type="text">
+          <button id="search-button">Search</button>
+        </div>
       </div>
     </section>
     <section>
       <div class="img-container">
-        <h2 id="pokemon-name"></h2>
-        <span id="pokemon-id"></span>
-        <div id="weight-height">
-          <p>Weight: <span id="weight"></span></p>
-          <p>Height: <span id="height"></span></p>
+        <div id="pokemon-info">
+          <span id="pokemon-name"></span>
+          <span id="pokemon-id"></span>
+          <div id="weight-height">
+            <span id="weight"></span>
+            <span id="height"></span>
+          </div>
         </div>
         <img src="" alt="" id="pokemon-image">
         <p id="types"></p>
