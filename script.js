@@ -43,16 +43,21 @@ const fetchPokemon = async () => {
 const renderPokedexScreen = data => {
   const typesArr = getPokemonTypes(data.types);
 
-  pokemonNameEl.innerText = data.name;
-  pokemonIdEl.innerText = data.id;
-  pokemonWeightEl.innerText = data.weight;
-  pokemonHeightEl.innerText = data.height;
+  pokemonNameEl.innerText = data.name.toUpperCase();
+  pokemonIdEl.innerHTML = `#<span>${data.id}</span>`;
+  pokemonWeightEl.innerHTML = `Weight: <span>${data.weight}</span>`;
+  pokemonHeightEl.innerHTML = `Height: <span>${data.height}</span>`;
   pokemonImageEl.setAttribute('src', data.sprites.front_default);
   pokemonImageEl.setAttribute('alt', `${data.name} image`);
 
   typesArr.forEach(type => {
+    const word = type;
+    const firstLetter = word.charAt(0).toUpperCase();
+    const restOfWord = word.slice(1);
+    const capitalizedType = firstLetter + restOfWord;
+
     pokemonTypesEl.innerHTML += `
-      <span class="type">${type}</span>
+      <span class="${type}">${capitalizedType}</span>
     `;
   });
 
